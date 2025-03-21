@@ -94,8 +94,12 @@ def ask(_trait, _dct, _secretChar):
   
 
 
-def guess(user_guess):
-  pass
+def guess(secretChar):
+  userGuess = input("Who do you think was the secret character?: ")
+  if userGuess != secretChar:
+    print(f"Nope! the secret character was {secretChar}")
+  else:
+    print("Correct!")
 
 def help(_commands):
   print(f"\nHere are the commands you can do: {_commands}\n")
@@ -127,9 +131,5 @@ while turns > 0 and userCommand != "quit":
       turns = 0
 
 if userCommand != "quit":
-  userGuess = input("Who do you think was the secret character?: ")
-  if userGuess != secretChar:
-    print(f"Nope! the secret character was {secretChar}")
-  else:
-    print("Correct!")
+  guess(secretChar)
 
